@@ -1,9 +1,11 @@
+  package Controler;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,35 +41,34 @@ public class servlet1 extends HttpServlet {
         // Get the PrintWriter to send a response to the client
         PrintWriter out = response.getWriter();
 
-        try {
-            // Register MySQL driver
-            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
+        // Database connection setup
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ajp", "ajp", "ajp")) {
+            
+            // PreparedStatement to prevent SQL Injection
+            String query = "INSERT INTO user (userName, birthDate, emailid, contactNo) VALUES (?, ?, ?, ?)";
+            try (PreparedStatement pstmt = con.prepareStatement(query)) {
+                // Set parameters for the query
+                pstmt.setString(1, userName);
+                pstmt.setString(2, birthDate);
+                pstmt.setString(3, emailid);
+                pstmt.setString(4, contactNo);
 
-            // Establish database connection
-            try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ajp", "ajp", "ajp");
-                 Statement stm = con.createStatement()) {
-
-                // Correct the SQL query syntax and ensure values are properly escaped
-                String query = "INSERT INTO user (userName, birthDate, emailid, contactNo) " +
-                               "VALUES ('" + userName + "', '" + birthDate + "', '" + emailid + "', '" + contactNo + "')";
-
-                // Execute the query and check if the data was inserted
-                if (stm.executeUpdate(query) > 0) {
+                // Execute the query and check if data was inserted
+                int result = pstmt.executeUpdate();
+                if (result > 0) {
                     // Redirect to another servlet on successful insert
                     response.sendRedirect("/Practical3/Servlet_2");
                 } else {
                     // In case of failure, print error message
                     out.println("<font color='#000'>Unable to Enter Data</font>");
                 }
-            } catch (SQLException e) {
-                // Handle SQL exceptions
-                out.println("<font color='#e00'>Error: " + e.getMessage() + "</font>");
             }
         } catch (SQLException e) {
-            // Handle JDBC driver registration or connection issues
-            out.println("<font color='#e00'>Driver Registration Error: " + e.getMessage() + "</font>");
+            // Handle SQL exceptions
+            out.println("<font color='#e00'>Error: " + e.getMessage() + "</font>");
         } finally {
             out.close();
         }
     }
 }
+ 
