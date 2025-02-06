@@ -1,3 +1,4 @@
+ 
 
 #include <stdio.h>
 #include <string.h>
@@ -32,4 +33,29 @@ void generateFrames(char *message, int frameLength)
         }
         printf("\n");
     }
+}
+
+int main()
+{
+
+    char message[1000] ;
+    int frameLength;
+
+    printf("Enter The Message To Be Transmited : ");
+    fgets(message, sizeof(message), stdin);
+    message[strcspn(message,"\n")]=0;
+
+
+    printf("Enter The Frame Length :");
+    scanf("%d",&frameLength);
+
+    if (frameLength<=0)
+    {
+        printf("Error:Frame length must be positive\n");
+        return 1;
+    }
+
+    generateFrames(message,frameLength);
+    return 0;
+
 }
