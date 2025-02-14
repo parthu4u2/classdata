@@ -33,7 +33,7 @@ def bfs(jugA,jugB,targetA,targetB):
             if(new_a,new_b)not in visited:
                 queue.append((new_a,new_b,path+[f"({a},{b})->{action}->({new_a},{new_b})"]))
 
-        print("No Solution found.")
+    print("No Solution found.")
 jugA=int(input("Enter Jug A Capacity :"))
 jugB=int(input("Enter Jug B Capacity :"))
 targetA=int(input("Enter Final Water in Jug A :"))
