@@ -1,0 +1,44 @@
+#hid3{
+    color: brown;
+    background-color: aqua;
+    border: 2px solid brown;
+    border-radius: 10px 20px 80px 30px;
+}
+
+h4,h5{
+    color: beige;
+    background-color: black;
+}
+*{
+    background-color: rgb(255, 229, 229);
+}
+
+
+/* 
+    background properties :- 
+        color
+        positions
+        image
+        attachment
+        repeat
+
+        background-color : ;
+        background-image:url("");
+
+    border :- 
+        width
+        style
+        color
+    border : 2px solid black;
+
+    border-width:2px 5px 3px 2px;
+    border-collapse: collapse;
+    border-radius: 5px;
+    border-radius: 10px 20px 80px 30px;
+    box-shadow: 5px 10px red;
+     box-shadow: 5px 10px 35px red inset;
+    box-shadow: horizontal vertical blur color inside;
+    
+
+
+    */
