@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive-media</title>
+    <style>
+        .box{
+            background-color:red;
+            font-size: large;
+            color: black;
+            display: none;
+        }
+        
+        @media (max-width:300px){
+            #box-1{
+                display: block;
+                background-color: yellow;
+            }
+        }
+        
+        @media (min-width:300px) and (max-width:700px){
+            #box-2{
+                display: block;
+                background-color: rgb(74, 210, 255);
+            }
+        }
+
+         
+        @media (min-width:700px) and (max-width:1000px){
+            #box-3{
+                display: block;
+                background-color: rgb(13, 255, 0);
+            }
+        }
+
+         
+        @media (min-width:1000px){
+            #box-4{
+                display: block;
+                background-color: rgb(255, 81, 0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class=box id="box-1">Phone</div>
+        <div class=box id="box-2">Tablet</div>
+        <div class=box id="box-3">Laptop</div>
+        <div class=box id="box-4">Desktop</div>
+</body>
+</html>
