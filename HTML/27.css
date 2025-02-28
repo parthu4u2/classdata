@@ -1,0 +1,137 @@
+
+*{
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    background-image: url(bgg);
+ }
+
+.container{
+    height: 300px;
+    width: 100%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap-reverse; */
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+    
+.item{
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+    border: 2px solid red;
+    margin: 10px;
+    padding: 5px;
+}
+
+.container-2{
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    row-gap: 2px;
+    column-gap: 100px;
+    grid-template-rows: 200px;
+    /* grid-column:100px 100px 100px 100px 100px; */
+    
+}
+
+.gitem{
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+    border: 2px solid red;
+    margin: 10px;
+    padding: 5px;
+     
+    
+}
+
+img{
+    height: 200px;
+    width: 300px;
+    opacity: 0.5;
+}
+
+.box{
+    background-color:red;
+    font-size: large;
+    color: black;
+    display: none;
+}
+
+@media (max-width:300px){
+    #box-1{
+        display: block;
+        background-color: yellow;
+    }
+}
+
+@media (min-width:300px) and (max-width:700px){
+    #box-2{
+        display: block;
+        background-color: rgb(74, 210, 255);
+    }
+}
+
+ 
+@media (min-width:700px) and (max-width:1000px){
+    #box-3{
+        display: block;
+        background-color: rgb(13, 255, 0);
+    }
+}
+
+ 
+@media (min-width:1000px){
+    #box-4{
+        display: block;
+        background-color: rgb(255, 81, 0);
+    }
+}
+
+.navbar{
+     background-color: rgb(0, 0, 0) ;
+     border: 2px solid rgb(255, 248, 248);
+     box-shadow:4px 10px 30px rgb(0, 0, 0) ;
+     padding: 3px;
+     border-radius: 30px 10px 30px 10px;
+    width: 400px;
+    margin-left: 400px;
+}
+
+a{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    background-color: black;
+
+}
+
+ul{
+    background-color: black;
+}
+ul li{
+    display: inline-block;
+    margin:10px;
+    font-style: italic;     
+}
+
+ul a:hover {
+    list-style-type: none;
+    text-decoration: underline;
+    color: rgb(201, 201, 201);
+}
+
+
+.div1{
+    height: 100px;
+    border: 2px solid blue;
+}
+
+.div2{
+    width: 350px;
+    height: 100px;
+    padding: 50px;
+    border: 2px solid red;
+    box-sizing: border-box;
+}

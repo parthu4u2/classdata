@@ -1,0 +1,18 @@
+.h1{
+        text-align: center;
+        font-size: 150px;
+          margin-top: 250px;  
+        color: rgb(109, 77, 77) ;
+        /* margin: 300px,300px,300px,300px; */
+  }
+
+#searchbar{
+    margin-left: 789px;
+    border: solid white;
+    border-radius: 100px;
+    background-color: white;
+    box-shadow: 7px 3px 10px black;
+    padding: 16px;
+    width: 800px;
+    
+}
