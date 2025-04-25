@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <button onclick="countadd()">Number ++</button>
+    <button id="colorBtn" onclick="getRandomColor()">Change Background Color</button>
+    <script>
+        var count = 0;
+        var array = [];
+        function countadd() {
+            count++;
+            para.innerHTML = count;
+
+            if (count <= 100) {
+                array.push(count);
+            }
+            else {
+                alert("Array is overflow .... ")
+            }
+            para1.innerHTML = array;
+
+        }
+
+
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        document.getElementById("colorBtn").addEventListener("click", function () {
+            document.body.style.backgroundColor = getRandomColor();
+        });
+
+
+        // document.body.style.backgroundColor = `#${(Math.random() * 0xFFFFFF << 0).toString(16)}`;
+
+
+
+    </script>
+    <h1>Output</h1>
+    <h4>Number Incress :- </h4>
+    <p id="para"></p>
+    <h4>Array :- </h4>
+    <p id="para1"></p>
+
+</body>
+
+</html>

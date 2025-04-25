@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="index1.js"></script>
+
+
+    <div id="container">
+        <button id="clickablebtn" onclick="showprompt()">Alert</button>&nbsp;&nbsp;&nbsp;
+        <button id="clickablebtn" onclick="askname()">Input</button>&nbsp;&nbsp;&nbsp;
+        <button id="confirm" onclick="confirmAction()">Confirm</button>&nbsp;&nbsp;&nbsp;
+        <button id="ShowNavigator" onclick="ShowNavigator()">ShowNavigator</button>&nbsp;&nbsp;&nbsp;
+        <button id="ShowLocation" onclick="ShowLocation()">ShowLocation</button>&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <h1>Output</h1>
+    <!-- <h2 id=""></h2> -->
+    <p id="output"></p>
+
+    <!-- <p id="para1"></p> -->
+    <script>
+        function showprompt() {
+            alert("This is Parth !");
+            output.classList.remove("clock-highlight");
+            var print = "You Seen The Alert !";
+            output.innerText = print;
+        }
+
+        function askname() {
+            const name = prompt("Enter Your Name ....");
+            output.classList.remove("clock-highlight");
+            const showname = `
+            Your Name is : ${name}`;
+            output.innerText = showname;
+
+        }
+        function confirmAction() {
+            const action = confirm("Are you sure you want confirm ?");
+            output.classList.remove("clock-highlight");
+            output.innerText = action
+                ? "You Confirmed the action !"
+                : "Action canceled !";
+        }
+
+
+        function ShowNavigator() {
+            output.classList.remove("clock-highlight");
+            const info = `
+            Browser Info :
+            Browser: ${navigator.appName}
+            Code Name: ${navigator.appCodeName}
+            Platform: ${navigator.platform}
+            User Agent: ${navigator.userAgent}
+            Language: ${navigator.language}
+            Online: ${navigator.online ? "Yes" : "No"}
+            `;
+            output.innerText = info;
+        }
+
+        function ShowLocation() {
+            output.classList.remove("clock-highlight");
+            const loc = window.location;
+            output.innerText = `
+            Location Info :
+            Full URL: ${loc.href}
+            Host: ${loc.host}
+            HostName: ${loc.hostname}
+            Pathname: ${loc.pathname}
+            Protocol: ${loc.protocol}
+            `;
+            output.innerText = loc;
+        }
+
+    </script>
+
+</body>
+
+</html>

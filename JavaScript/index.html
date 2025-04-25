@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOM and DOM</title>
+
+    <style>
+        #payment-form {
+            width: 280px;
+            margin: 20px auto;
+            border: 1px solid #000000;
+            padding: 100px;
+        }
+
+        h1 {
+            text-align: center;
+            background: red;
+            color: #fff;
+            padding: 5px;
+            margin: 0;
+        }
+
+        input,
+        select {
+            width: 100%;
+            margin: 5px 0;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        input[type="button"] {
+            background: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="indexxxxx.js"></script>
+
+    <button type="button">Submit</button>
+
+    <div id="container">
+        <p id="para">I'm a Parul University student ...</p>
+    </div>
+
+    <hr />
+
+    <div id="payment-form">
+        <h1>Payment Form</h1>
+        <form>
+            <input type="text" placeholder="Name" />
+            <input type="number" placeholder="Age" />
+            <input type="text" placeholder="Phone Number" />
+            <input type="text" placeholder="Data" />
+            <input type="text" placeholder="Card Number" />
+            <input type="text" placeholder="CVV" />
+            <input type="text" placeholder="OTP" />
+
+            <select>
+                <option disabled selected>Select Payment Method</option>
+                <option>UPI</option>
+                <option>Card</option>
+                <option>Net Banking</option>
+                <option>Wallet</option>
+            </select>
+
+            <label><input type="checkbox" /> I agree to the privacy policy</label>
+            <input type="button" value="Submit" />
+        </form>
+    </div>
+
+</body>
+
+</html>
